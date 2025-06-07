@@ -11,9 +11,13 @@ const initialState = {
 
 export const getSwapiData = createAsyncThunk('swapi/getData', async (_, thunkAPI) => {
 	const state = thunkAPI.getState().swapi;
-	const response = await fetch(state.base + state.currValue);
-	const result = await response.json();
-	return result;
+	if(state.currValue !== ''){
+		const response = await fetch(state.base + state.currValue);
+		const result = await response.json();
+		return result
+	}
+	
+	return '';
 });
 
 

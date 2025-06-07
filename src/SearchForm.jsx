@@ -21,7 +21,7 @@ function SearchForm() {
 	return (
 		<div>
 			<form action="">
-				<p>https://www.swapi.tech/api/</p>
+				<span>https://www.swapi.tech/api/</span>
 				<input type="text" ref={textRef}/>
 				<button type='button' onClick={handleSumbit}>get info</button>
 			</form>
